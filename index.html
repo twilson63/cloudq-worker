@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Cloudq-worker by twilson63</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/twilson63/cloudq-worker">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Cloudq-worker</h1>
+            <h2>A cloudq worker module for cloudq jobs</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/twilson63/cloudq-worker/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/twilson63/cloudq-worker/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>cloudq-worker</h1>
+
+<p>A base worker class for cloudq</p>
+
+<h1>Install</h1>
+
+<div class="highlight"><pre>npm install cloudq-worker
+</pre></div>
+
+<h1>Use</h1>
+
+<div class="highlight"><pre>var <span class="nv">Worker</span> <span class="o">=</span> require<span class="o">(</span><span class="s1">'cloudq-worker'</span><span class="o">)</span>.Worker;
+
+var <span class="nv">worker</span> <span class="o">=</span> new Worker<span class="o">(</span>config, <span class="k">function</span><span class="o">(</span>err, doc, <span class="k">done</span><span class="o">){</span>
+  // TODO: Do Stuff...
+  // When <span class="nb">complete </span>call <span class="k">done</span><span class="o">(</span>doc.id, callback<span class="o">)</span>;
+  <span class="k">done</span><span class="o">(</span>doc.id, <span class="k">function</span><span class="o">(</span>err, res<span class="o">)</span> <span class="o">{</span>
+    // Check err <span class="k">for </span>success
+  <span class="o">})</span>;
+<span class="o">})</span>;
+</pre></div>
+
+<h1>Config</h1>
+
+<p>The config should match the nodejs <code>urlObj</code> dsl with one additional key, <code>interval</code> if this is not set then the default will 1sec.</p>
+
+<h1>Callback</h1>
+
+<p>arguments:</p>
+
+<p>err - null if not error, otherwise the error of the request
+doc - is the document containing the cloudq job
+done - is the function to call when you are finished processing the job, it will set the job to completed on cloudq.  You must pass the doc.id and MAY pass a callback function to capture the result of the request to mark the job complete.</p>
+
+<h1>LICENSE</h1>
+
+<p>MIT</p>
+
+<h1>Contributing</h1>
+
+<p>All pull requests are welcome</p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/twilson63">twilson63</a> can be found on <a href="https://github.com/twilson63/cloudq-worker">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
