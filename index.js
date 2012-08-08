@@ -25,7 +25,7 @@ var Worker = exports.Worker = function(options, callback) {
 
   var check = function() {
     request(url.format(options), { json: true }, function(e,r,b) {
-      if (!b) { return false };
+      if (e) { return false; };
       if (!((b.status != null) && b.status === 'empty')) {
         console.log(options.pathname + '/' + b.id + ' - Job Reserved');
         callback(e, b, completed);
